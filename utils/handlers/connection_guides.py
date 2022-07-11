@@ -118,8 +118,10 @@ async def send_guide_step(message, state_index, state_keyboard, guide_messages, 
 
     # Send screenshots
     attached_screenshots = types.MediaGroup()
-    for photo in guide_photos[state_index]:
-        attached_screenshots.attach_photo(photo)
+    # for photo in guide_photos[state_index]:
+    #     attached_screenshots.attach_photo(photo)
+    for photo_path in guide_photos[state_index]:
+        attached_screenshots.attach_photo(open(photo_path, "rb"))
     screenshots_msg = await message.answer_media_group(media=attached_screenshots)
     return text_msg, screenshots_msg
 
