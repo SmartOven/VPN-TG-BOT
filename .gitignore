@@ -1,2 +1,4 @@
 *.idea
 #connection_guides_screenshots/
+utils/token.txt
+utils/test_token.txt
